@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "npx browser-sync start --server --files '*.html, *.css, *.js'"
+    "serve": "parcel index.html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
     "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-prettier": "^3.1.1",
+    "parcel": "^1.12.4",
     "prettier": "1.19.1",
     "stylelint": "^11.1.1",
     "stylelint-config-prettier": "^6.0.0",
