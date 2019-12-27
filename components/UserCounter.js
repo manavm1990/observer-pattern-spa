@@ -6,24 +6,8 @@ class UserCounter extends Component {
     super();
   }
 
-  createMarkup(users) {
+  createMarkup({ users }) {
     return `<p>${users.length} total users.</p>`;
-  }
-
-  render(elId = "user-counter") {
-    // Does element exist currently?
-    let el = document.getElementById(elId);
-
-    // If not, let's create it and append it to #root
-    if (!el) {
-      el = createDivWithId(elId);
-      document.getElementById("root").appendChild(el);
-    }
-    el.innerHTML = this.createMarkup(this.st.users);
-  }
-
-  update() {
-    this.render();
   }
 }
 
