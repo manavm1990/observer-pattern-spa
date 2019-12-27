@@ -18,6 +18,10 @@ class Users extends Subject {
       }
     ];
   }
+
+  update({ k, v }) {
+    this[k] = v;
+  }
 }
 
 export default new Users();

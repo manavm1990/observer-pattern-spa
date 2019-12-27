@@ -3,7 +3,15 @@ import * as components from "./components";
 
 state.Users.addObserver(components.UserList, components.UserCounter);
 
+const usersProxy = new Proxy(state.Users, {
+  set(_, k, v) {
+    state.Users.update({ k, v });
+    return true;
+  }
+});
+
 // Components will only manage 'proxy' state.
+components.AddUser.proxySt = usersProxy;
 components.UserCounter.proxySt = usersProxy;
 components.UserList.proxySt = usersProxy;
 
