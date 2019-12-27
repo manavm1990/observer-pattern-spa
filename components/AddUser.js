@@ -1,4 +1,5 @@
 import { createDivWithId, getFormDataFromIds } from "../lib/utils";
+import { createDivWithId, createObjectFromFormIds } from "../lib/utils";
 
 // 'extends' provides 'share method' 'update'
 class AddUser {
