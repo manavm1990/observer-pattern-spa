@@ -1,13 +1,18 @@
+import { Component } from "../lib/classes";
 import { createDivWithId } from "../lib/utils";
 
-class UserCounter {
+class UserCounter extends Component {
+  constructor() {
+    super();
+  }
+
   createMarkup(users) {
     return `<p>${users.length} total users.</p>`;
   }
 
-  render({ users }, elId = "user-counter") {
+  render(elId = "user-counter") {
     const el = document.getElementById(elId) || createDivWithId(elId);
-    el.innerHTML = this.createMarkup(users);
+    el.innerHTML = this.createMarkup(this.st.users);
     document.getElementById("root").appendChild(el);
   }
 }
