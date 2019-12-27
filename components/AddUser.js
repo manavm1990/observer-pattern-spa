@@ -1,5 +1,5 @@
 import { Component } from "../lib/classes";
-import { createDivWithId, createObjectFromFormIds } from "../lib/utils";
+import { createObjectFromFormIds } from "../lib/utils";
 
 // 'extends' provides 'share method' 'update'
 class AddUser extends Component {
@@ -36,11 +36,8 @@ class AddUser extends Component {
   }
 
   // Developer's Note: By default, all components will render in 'root'
-  render(elId = "add-user") {
-    const el = document.getElementById(elId) || createDivWithId(elId);
-    el.innerHTML = this.createMarkup();
-    document.getElementById("root").appendChild(el);
-
+  render() {
+    super.render();
     this.bindListeners();
   }
 }
