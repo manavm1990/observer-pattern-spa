@@ -11,7 +11,7 @@ class UserList {
     `;
   }
 
-  render({ users }, el = document.getElementById("root")) {
+  render({ users }, el = document.getElementById("user-list")) {
     el.innerHTML = this.createMarkup(users);
   }
 

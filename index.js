@@ -7,3 +7,6 @@ import kebabCase from "lodash.kebabcase";
 document.getElementById("root").innerHTML = Object.keys(components)
   .map(component => `<div id="${kebabCase(component)}"></div>`)
   .join("");
+
+components.UserList.render(state.Users);
+components.UserCounter.render(state.Users);
