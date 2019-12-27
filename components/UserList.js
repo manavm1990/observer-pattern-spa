@@ -1,3 +1,5 @@
+import { createDivWithId } from "../lib/utils";
+
 function createUserListMarkup(users) {
   return users.map(({ name }) => `<li>${name}</li>`).join("");
 }
@@ -11,8 +13,10 @@ class UserList {
     `;
   }
 
-  render({ users }, el = document.getElementById("user-list")) {
+  render({ users }, elId = "user-list") {
+    const el = document.getElementById(elId) || createDivWithId(elId);
     el.innerHTML = this.createMarkup(users);
+    document.getElementById("root").appendChild(el);
   }
 
   update(data) {

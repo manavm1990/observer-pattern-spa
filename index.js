@@ -1,12 +1,9 @@
 import * as state from "./store";
 import * as components from "./components";
 
-import kebabCase from "lodash.kebabcase";
+state.Users.addObserver(components.UserList, components.UserCounter);
 
-// Create <div> for each component inside of root.
-document.getElementById("root").innerHTML = Object.keys(components)
-  .map(component => `<div id="${kebabCase(component)}"></div>`)
-  .join("");
-
-components.UserList.render(state.Users);
-components.UserCounter.render(state.Users);
+// Rendered markup order is dependent on the order in which these fxns. are invoked.
+components.UserList.render(state.Users, "user-list");
+components.UserCounter.render(state.Users, "user-counter");
+components.AddUser.render("add-user");
