@@ -1,4 +1,4 @@
-import { Component } from "../lib/classes";
+import { Component } from "../../lib/classes";
 
 function createUserListMarkup(users) {
   return users.map(({ name }) => `<li>${name}</li>`).join("");

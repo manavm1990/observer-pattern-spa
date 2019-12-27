@@ -1,7 +1,7 @@
 import * as state from "./store";
-import * as components from "./components";
+import { AddUser, UserCounter, UserList } from "./components/users";
 
-state.Users.addObserver(components.UserList, components.UserCounter);
+state.Users.addObserver(UserList, UserCounter);
 
 const usersProxy = new Proxy(state.Users, {
   set(_, k, v) {
@@ -11,11 +11,11 @@ const usersProxy = new Proxy(state.Users, {
 });
 
 // Components will only manage 'proxy' state.
-components.AddUser.proxySt = usersProxy;
-components.UserCounter.proxySt = usersProxy;
-components.UserList.proxySt = usersProxy;
+AddUser.proxySt = usersProxy;
+UserCounter.proxySt = usersProxy;
+UserList.proxySt = usersProxy;
 
 // Rendered markup order is dependent on the order in which these fxns. are invoked.
-components.UserList.render();
-components.UserCounter.render();
-components.AddUser.render();
+UserList.render();
+UserCounter.render();
+AddUser.render();

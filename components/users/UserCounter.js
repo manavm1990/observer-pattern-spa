@@ -1,5 +1,4 @@
-import { Component } from "../lib/classes";
-import { createDivWithId } from "../lib/utils";
+import { Component } from "../../lib/classes";
 
 class UserCounter extends Component {
   constructor() {

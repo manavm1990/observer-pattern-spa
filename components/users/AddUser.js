@@ -1,5 +1,5 @@
-import { Component } from "../lib/classes";
-import { createObjectFromFormIds } from "../lib/utils";
+import { Component } from "../../lib/classes";
+import { createObjectFromFormIds } from "../../lib/utils";
 
 // 'extends' provides 'share method' 'update'
 class AddUser extends Component {
