@@ -19,13 +19,19 @@ class UserList extends Component {
   }
 
   render(elId = "user-list") {
-    const el = document.getElementById(elId) || createDivWithId(elId);
+    // Does element exist currently?
+    let el = document.getElementById(elId);
+
+    // If not, let's create it and append it to #root
+    if (!el) {
+      el = createDivWithId(elId);
+      document.getElementById("root").appendChild(el);
+    }
     el.innerHTML = this.createMarkup(this.st.users);
-    document.getElementById("root").appendChild(el);
   }
 
-  update(data) {
-    return data;
+  update() {
+    this.render();
   }
 }
 

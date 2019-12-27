@@ -21,6 +21,7 @@ class Users extends Subject {
 
   update({ k, v }) {
     this[k] = v;
+    this.notify(this);
   }
 }
 
