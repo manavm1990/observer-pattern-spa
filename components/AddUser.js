@@ -33,6 +33,8 @@ class AddUser {
     const el = document.getElementById(elId) || createDivWithId(elId);
     el.innerHTML = this.createMarkup();
     document.getElementById("root").appendChild(el);
+
+    this.bindListeners();
   }
 }
 
